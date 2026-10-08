@@ -23,3 +23,9 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file AutoBroadcast/pom.xml
+
+    - name: Upload JAR
+      uses: actions/upload-artifact@v4
+      with:
+        name: AutoBroadcast
+        path: AutoBroadcast/target/*.jar
