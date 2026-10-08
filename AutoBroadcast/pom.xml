@@ -6,16 +6,22 @@
 
     <groupId>de.autobroadcast</groupId>
     <artifactId>AutoBroadcast</artifactId>
-    <version>1.0.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <name>AutoBroadcast</name>
+
     <properties>
-        <!-- Falls dein Paper 26.3 eine andere Java-Version verlangt, hier anpassen -->
-        <maven.compiler.release>25</maven.compiler.release>
+        <java.version>17</java.version> <!-- Nutze 17 oder 21 je nach MC-Version -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <repositories>
+        <!-- Repository für Spigot / Paper API -->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
         <repository>
             <id>papermc</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
@@ -23,17 +29,27 @@
     </repositories>
 
     <dependencies>
+        <!-- Spigot API (oder papermc-api) -->
         <dependency>
-            <groupId>io.papermc.paper</groupId>
-            <artifactId>paper-api</artifactId>
-            <!-- Falls die Version nicht gefunden wird: auf papermc.io/downloads die genaue API-Version prüfen -->
-            <version>26.3.build.+</version>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.20.1-R0.1-SNAPSHOT</version> <!-- Passe deine Version an -->
             <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>AutoBroadcast-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
