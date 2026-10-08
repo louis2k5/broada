@@ -1,0 +1,15 @@
+name: AutoBroadcast
+version: '${project.version}'
+main: de.autobroadcast.AutoBroadcast
+api-version: '26.3'
+description: Sendet automatisch Nachrichten in festen Abständen in den Chat.
+commands:
+  autobroadcast:
+    description: Verwaltet das AutoBroadcast-Plugin
+    usage: /<command> reload
+    aliases: [abc]
+    permission: autobroadcast.admin
+permissions:
+  autobroadcast.admin:
+    description: Erlaubt /autobroadcast reload
+    default: op

@@ -1,0 +1,25 @@
+# ==========================================
+#  AutoBroadcast - Konfiguration
+#  Nach Änderungen: /autobroadcast reload
+# ==========================================
+
+# Zeit zwischen zwei Nachrichten in MINUTEN (Kommazahlen wie 0.5 = 30 Sekunden gehen auch)
+interval-minutes: 5
+
+# Reihenfolge der Nachrichten: false = der Reihe nach, true = zufällig
+random-order: false
+
+# Nachrichten nur senden, wenn mindestens so viele Spieler online sind
+min-players: 1
+
+# Wird vor jede Nachricht gesetzt (leer lassen für keinen Präfix)
+prefix: "<gold>[<yellow>Info</yellow>]</gold> "
+
+# Formatierung per MiniMessage, z.B. <red>rot</red>, <bold>fett</bold>,
+# <click:open_url:'https://example.com'>Link</click>, <gradient:red:blue>Verlauf</gradient>
+# Beliebig viele Nachrichten - einfach neue Zeilen mit "- " hinzufügen.
+# Mehrere Zeilen in einer Nachricht: \n verwenden.
+messages:
+  - "<green>Willkommen auf unserem Server!</green>"
+  - "<aqua>Besuche unsere Webseite für Neuigkeiten.</aqua>"
+  - "<yellow>Bei Fragen hilft dir unser Team gerne weiter.</yellow>"
